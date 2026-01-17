@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LouLa Ciné</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🎬 LouLa Ciné</h1>
+            <nav>
+                <button onclick="showHome()">Accueil</button>
+                <button onclick="showVilles()">Par Ville</button>
+                <div id="auth-buttons">
+                    <button onclick="showLogin()">Connexion</button>
+                    <button onclick="showRegister()">Inscription</button>
+                </div>
+                <div id="user-menu" style="display:none;">
+                    <span id="user-name"></span>
+                    <button onclick="logout()">Déconnexion</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Page d'accueil -->
+            <div id="home-page">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Rechercher un film..." onkeyup="handleSearch(event)">
+                    <button onclick="performSearch()">🔍</button>
+                </div>
+                <h2>Films à la une</h2>
+                <div id="films-list" class="films-grid"></div>
+            </div>
+
+            <!-- Page film détail -->
+            <div id="film-detail-page" style="display:none;">
+                <button onclick="showHome()">← Retour</button>
+                <div id="film-detail"></div>
+            </div>
+
+            <!-- Page ville -->
+            <div id="ville-page" style="display:none;">
+                <button onclick="showHome()">← Retour</button>
+                <h2>Choisissez une ville</h2>
+                <div id="villes-list"></div>
+                <div id="programmations-ville"></div>
+            </div>
+
+            <!-- Page login -->
+            <div id="login-page" style="display:none;">
+                <h2>Connexion</h2>
+                <form onsubmit="handleLogin(event)">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Mot de passe" required>
+                    <button type="submit">Se connecter</button>
+                </form>
+            </div>
+
+            <!-- Page register -->
+            <div id="register-page" style="display:none;">
+                <h2>Inscription</h2>
+                <form onsubmit="handleRegister(event)">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <input type="password" id="register-password" placeholder="Mot de passe" required>
+                    <button type="submit">Créer un compte</button>
+                </form>
+            </div>
+
+            <!-- Page client -->
+            <div id="client-page" style="display:none;">
+                <h2>Mes réservations</h2>
+                <div id="reservations-list"></div>
+            </div>
+
+            <!-- Page proprio film -->
+            <div id="proprio-film-page" style="display:none;">
+                <h2>Mes films</h2>
+                <button onclick="showAddFilm()">+ Ajouter un film</button>
+                <div id="mes-films-list"></div>
+            </div>
+
+            <!-- Page ajouter film -->
+            <div id="add-film-page" style="display:none;">
+                <h2>Ajouter un film</h2>
+                <form onsubmit="handleAddFilm(event)">
+                    <input type="text" id="film-titre" placeholder="Titre" required>
+                    <input type="number" id="film-duree" placeholder="Durée (min)" required>
+                    <input type="text" id="film-langue" placeholder="Langue" required>
+                    <input type="text" id="film-realisateur" placeholder="Réalisateur" required>
+                    <input type="number" id="film-age" placeholder="Âge minimum" required>
+                    <input type="text" id="film-sous-titre" placeholder="Sous-titre" required>
+                    <button type="submit">Ajouter</button>
+                    <button type="button" onclick="showProprioFilmPage()">Annuler</button>
+                </form>
+            </div>
+
+            <!-- Page proprio cinema -->
+            <div id="proprio-cinema-page" style="display:none;">
+                <h2>Mes programmations</h2>
+                <button onclick="showAddProgrammation()">+ Programmer un film</button>
+                <div id="mes-programmations-list"></div>
+            </div>
+
+            <!-- Page ajouter programmation -->
+            <div id="add-programmation-page" style="display:none;">
+                <h2>Programmer un film</h2>
+                <form onsubmit="handleAddProgrammation(event)">
+                    <select id="prog-film" required></select>
+                    <input type="date" id="prog-date-deb" required>
+                    <input type="date" id="prog-date-fin" required>
+                    <div id="creneaux-container">
+                        <div class="creneau-item">
+                            <select class="creneau-jour">
+                                <option value="LUN">Lundi</option>
+                                <option value="MAR">Mardi</option>
+                                <option value="MER">Mercredi</option>
+                                <option value="JEU">Jeudi</option>
+                                <option value="VEN">Vendredi</option>
+                                <option value="SAM">Samedi</option>
+                                <option value="DIM">Dimanche</option>
+                            </select>
+                            <input type="time" class="creneau-heure" required>
+                            <button type="button" onclick="removeCreneau(this)">-</button>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addCreneau()">+ Ajouter créneau</button>
+                    <button type="submit">Créer programmation</button>
+                    <button type="button" onclick="showProprioCinemaPage()">Annuler</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

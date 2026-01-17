@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+header {
+    background: #000;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #dc0000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #dc0000;
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+button {
+    background: #dc0000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #b30000;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #dc0000;
+    border-radius: 4px;
+}
+
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.film-card {
+    background: #1a1a1a;
+    border: 1px solid #dc0000;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.film-card:hover {
+    transform: scale(1.05);
+    border-color: #ff0000;
+}
+
+.film-card h3 {
+    color: #dc0000;
+    margin-bottom: 0.5rem;
+}
+
+.film-card p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.film-detail {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #dc0000;
+    margin-top: 1rem;
+}
+
+.film-detail h2 {
+    color: #dc0000;
+    margin-bottom: 1rem;
+}
+
+.programmation-group {
+    margin-top: 2rem;
+}
+
+.programmation-group h3 {
+    color: #dc0000;
+    margin-bottom: 1rem;
+}
+
+.cinema-info {
+    background: #0a0a0a;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #dc0000;
+}
+
+.creneaux-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.creneau {
+    background: #dc0000;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+form {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #dc0000;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background: #0a0a0a;
+    color: #fff;
+    border: 1px solid #dc0000;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.creneaux-container {
+    margin: 1rem 0;
+}
+
+.creneau-item {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+
+.creneau-item select, .creneau-item input {
+    flex: 1;
+    margin: 0;
+}
+
+.reservation-card, .programmation-card {
+    background: #1a1a1a;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #dc0000;
+    border-radius: 4px;
+}
+
+#user-menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}

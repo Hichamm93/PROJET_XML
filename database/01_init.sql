@@ -80,3 +80,14 @@ CREATE TABLE IF NOT EXISTS creneau_hebdo (
   heure_debut TIME NOT NULL,
   id_programmation INTEGER NOT NULL REFERENCES cinema.programmation(id)
 );
+
+-- ----------------------------
+-- Table: reservation
+-- ----------------------------
+CREATE TABLE IF NOT EXISTS reservation (
+  id SERIAL PRIMARY KEY,
+  id_utilisateur INTEGER NOT NULL REFERENCES cinema.utilisateur(id),
+  id_programmation INTEGER NOT NULL REFERENCES cinema.programmation(id),
+  date_seance DATE NOT NULL,
+  heure_seance TIME NOT NULL
+);
