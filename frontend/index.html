@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="ambient-overlay" aria-hidden="true">
+        <span class="glow orb-1"></span>
+        <span class="glow orb-2"></span>
+        <span class="glow orb-3"></span>
+        <span class="glow orb-4"></span>
+    </div>
     <div id="app">
         <header>
             <h1>🎬 LouLa Ciné</h1>
@@ -27,6 +33,27 @@
         <main>
             <!-- Page d'accueil -->
             <div id="home-page">
+                <section class="hero">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Nouvelle expérience cinéma</p>
+                        <h2>Des séances immersives, une sélection curatée.</h2>
+                        <p class="subtitle">Découvrez les films à l'affiche avec une interface lumineuse, rapide et élégante.</p>
+                        <div class="hero-actions">
+                            <button onclick="showVilles()">Explorer les villes</button>
+                            <button class="ghost" onclick="showRegister()">Créer un compte</button>
+                        </div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card__header">
+                            <span>Top Sélection</span>
+                            <span class="chip">Ce soir</span>
+                        </div>
+                        <div class="hero-card__content">
+                            <h3>Avant-premières & coups de cœur</h3>
+                            <p>Un mix d'épopées visuelles et de sensations fortes, prêt à réserver.</p>
+                        </div>
+                    </div>
+                </section>
                 <div class="search-bar">
                     <input type="text" id="search-input" placeholder="Rechercher un film..." onkeyup="handleSearch(event)">
                     <button onclick="performSearch()">🔍</button>
